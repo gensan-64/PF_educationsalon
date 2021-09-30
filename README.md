@@ -16,11 +16,11 @@
 　（非常勤講師も参加可能とする））
 
 ### 主な利用シーン
-教育実習生が不安や授業の進め方を共有し、次の日の実習に活かし、より円滑な授業を行うために活用する。
+教育実習生が不安や授業の進め方を共有し、次の日の実習に活かし、より円滑な授業を行うために活用する。  
 教育実習へ行く前の学生は、授業の進め方や生徒とのかかわりをイメージし、事前の準備をしっかりと行うために用いる
 
 ## 設計書
-ER図　https://drive.google.com/file/d/1ctOJBs8-t0lr6DkA0zg43fJA8II07-hT/view?usp=sharing
+ER図　https://drive.google.com/file/d/1ctOJBs8-t0lr6DkA0zg43fJA8II07-hT/view?usp=sharing  
 テーブル設計図　https://docs.google.com/spreadsheets/d/1bnvg4uwTGCt40CqfWQskhfBXnNJ9PdWisCZYH4xFRlk/edit?usp=sharing
 
 ## チャレンジ要素一覧
