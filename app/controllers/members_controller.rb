@@ -8,7 +8,7 @@ class MembersController < ApplicationController
   # (会員が投稿したアドバイスたちをインスタンス変数に渡す)
   @advices = @member.advices
 
-  # (空のインスタンス変数に新規投稿されたアドバイスを渡す渡す)
+  # (空のインスタンス変数に新規投稿されたアドバイスを渡す)
   @advice = Advice.new
 
  end
@@ -31,7 +31,7 @@ class MembersController < ApplicationController
    redirect_to  member_path(@member), notice: "更新成功しました"
   else
    # (それ以外は編集画面にとどまる)
-   render "edit"
+   render 'edit'
   end
  end
 
