@@ -1,0 +1,22 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+   <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+    <th colspan="3"></th>
+   </tr>
+  </thead>
+  <tbody>
+   <% advices.each do |advice| %>
+    <tr>
+      <td><%= link_to member_path(advice.member) do %>
+       <%= attachment_image_tag(advice.member, :profile_image, :fill, 50, 50, fallback: "no-image.jpg") %>
+       <% end %>
+      </td>
+      <td><%= link_to advice.title, advice_path(advice), class: "advice_#{advice.id}" %></td>
+      <td><%= advice.body %></td>
+    </tr>
+   <% end %>
+  </tbody>
+</table>
