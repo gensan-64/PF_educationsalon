@@ -29,15 +29,29 @@ class AdvicesController < ApplicationController
  end
 
  def show
+  @advice = Advice.find(params[:id])
  end
 
  def edit
  end
 
  def update
+  if @advice.update(advice_params)
+   redirect_to advice_path(@advice), notice: "更新成功！！"
+  else
+   render "edit"
+  end
  end
 
  def destroy
+  @advice.destroy
+  redirect_to advices_path
+ end
+
+ private
+
+ def advice_params
+  params.require(:advice).permit(:title, :body)
  end
 
 end
