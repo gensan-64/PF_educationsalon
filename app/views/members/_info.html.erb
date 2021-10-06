@@ -1,0 +1,19 @@
+<table class='table'>
+  <tr><%= attachment_image_tag(member, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+  <tr>
+	  <th>名前</th>
+	  <th><%= member.name %></th>
+  </tr>
+  <tr>
+    <th>科目</th>
+    <th><%= member.subject %></th>
+  </tr>
+  <tr>
+	  <th>自己紹介</th>
+	  <th><%= member.introduction %></th>
+  </tr>
+</table>
+
+<div class='row'>
+  <%= link_to '',edit_member_path(member),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_member_#{member.id}" %>
+</div>

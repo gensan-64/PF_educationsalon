@@ -35,7 +35,7 @@ class MembersController < ApplicationController
   end
  end
 
- privete
+ private
 
  def user_params
   params.require(:member).permit(:name, :introduction, :subject, :profile_image)
