@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :members
 
   root to: 'homes#top'
-  get 'home/about' => 'homes#about', as: 'about'
+  get 'home/about' => 'homes#about'
 
   resources :advices, only: [:index, :show, :edit, :create, :update, :destroy] do
    resource :favorites, only: [:create, :destroy]
