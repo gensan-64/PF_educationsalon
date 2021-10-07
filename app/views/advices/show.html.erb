@@ -17,6 +17,9 @@
         </td>
         <td><%= link_to @advice.title, advice_path(@advice) %></td>
         <td><%= @advice.body %></td>
+        <% if @advice.member == current_member %>
+         <td><%= link_to '編集する',edit_advice_path(@advice), class: "btn btn-sm btn-success edit_advice_#{@advice.id}" %></td>
+         <td><%= link_to '削除する', advice_path(@advice), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_advice_#{@advice.id}"%></td>
       </tr>
      </table>
    </div>
