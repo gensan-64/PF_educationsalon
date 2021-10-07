@@ -16,6 +16,7 @@
       </td>
       <td><%= link_to advice.title, advice_path(advice), class: "advice_#{advice.id}" %></td>
       <td><%= advice.body %></td>
+      <td class="favorite-btn"><%= render "favorites/favorite-btn", advice: advice %></td>
     </tr>
    <% end %>
   </tbody>

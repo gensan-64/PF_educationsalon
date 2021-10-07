@@ -1,0 +1,5 @@
+<% if advice.favorited_by?(current_member) %>
+ <%= link_to advice.favorites.count, advice_favorites_path(advice), method: :delete, class: "fas fa-heart heart_blue" %>
+<% else %>
+ <%= link_to advice.favorites.count, advice_favorites_path(advice), method: :post, class: "fas fa-heart heart_red" %>
+<% end %>

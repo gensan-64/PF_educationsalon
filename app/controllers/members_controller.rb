@@ -25,7 +25,6 @@ class MembersController < ApplicationController
  end
 
  def update
-  # (もし、会員が更新したら)
   if @member.update(member_params)
    # (メッセージと共に詳細ページに行く)
    redirect_to  member_path(@member), notice: "更新成功しました"
