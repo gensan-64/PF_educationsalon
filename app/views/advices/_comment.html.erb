@@ -1,0 +1,21 @@
+<table>
+  <% @advice.advice_comments.each do |advice_comment| %>
+    <% advice_comment_member = advice_comment.member %>
+    <tr>
+    	<td>
+    		<%= link_to member_path(advice_comment_member), class: "member_#{advice_comment_member.id}" do %>
+      		<%= attachment_image_tag advice_comment_member, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+      		<%= advice_comment_member.name %>
+    		<% end %>
+    	</td>
+    	<td><%= advice_comment.comment %></td>
+    	<% if current_member == advice_comment_member %>
+      	<td><%= link_to 'Destroy', advice_advice_comment_path(advice_comment.member_id, advice_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+    	<% end %>
+    </tr>
+  <% end %>
+</table>
+<%= form_with model:[@advice,@advice_comment], local: true do |f| %>
+  <%= f.text_area :comment, size:"90x5" %><br>
+  <%= f.submit '送信'%>
+<% end %>
