@@ -1,0 +1,6 @@
+<h2>フォロー中会員一覧</h2>
+<% if @members.exists? %>
+ <%= render '/members/index', members: @members %>
+<% else %>
+ <p>会員はいません</p>
+<% end %>
