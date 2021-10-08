@@ -6,7 +6,6 @@ class AdviceCommentsController < ApplicationController
   @advice_comment.advice_id = @advice_id
   @advice_comment.member_id = current_member.id
   if @advice_comment.save
-   redirect_to advice_path(@advice.id)
   else
    render 'advices/show'
   end
@@ -17,7 +16,6 @@ class AdviceCommentsController < ApplicationController
   @advice = Advice.find(params[:advice_id])
   advice_comment = @advice.advice_comments.find(params[:id])
   advice_comment.destroy
-  redirect_to request.referer
  end
 
  private
