@@ -11,6 +11,17 @@
     <tr>
      <td><%= attachment_image_tag(member, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
      <td><%= member.name %></td>
+     <td>フォロー数: <%= member.followings.count %></td>
+     <td>フォロワー数<%= member.followers.count %></td>
+     <td>
+      <% if current_member != member %>
+       <% if current_member.following?(member) %>
+        <%= link_to "フォロー外す", member_relationships_path(member.id), method: :delete %>
+       <% else %>
+        <%= link_to "フォローする", member_relationships_path(member.id), method: :post %>
+       <% end %>
+      <% end %>
+     </td>
      <td><%= link_to 'Show', member_path(member), class: "member_#{member.id}" %></td>
     </tr>
    <% end %>
