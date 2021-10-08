@@ -9,7 +9,7 @@
   <tbody>
    <% members.each do |member| %>
     <tr>
-     <td><%= attachment_image_tag(member, :profile_image, :fill, 50, 50, fallback: "no-image.jpg") %></td>
+     <td><%= attachment_image_tag(member, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
      <td><%= member.name %></td>
      <td><%= link_to 'Show', member_path(member), class: "member_#{member.id}" %></td>
     </tr>

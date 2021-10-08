@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
    <div class="container">
-     <a class="navbar-brand" href="/"><span>edusal</span></a>
+     <a class="navbar-brand" href="/"><span><i class="fas fa-graduation-cap"></i></span></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
      </button>
@@ -10,14 +10,14 @@
         <% if member_signed_in? %>
          <li><%= link_to ' ホーム', member_path(current_member),class: 'fas fa-home nav-link text-light' %></li>
          <li><%= link_to ' メンバー', members_path,class: 'fas fa-users nav-link text-light' %></li>
-         <li><%= link_to ' アドバイス', advices_path ,class: 'fas fa-book-open nav-link text-light'%></li>
-         <li><%= link_to ' ログアウト', destroy_member_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
-         <li><%= link_to ' ルール', home_about_path,class: 'fas fa-link nav-link text-light' %></li>
+         <li><%= link_to ' アドバイス', advices_path ,class: 'fas fa-comments nav-link text-light'%></li>
+         <li><%= link_to ' ログアウト', destroy_member_session_path, method: :delete,class: 'fas fa-door-closed nav-link text-light' %></li>
+         <li><%= link_to ' ルール', home_about_path,class: 'fas fa-exclamation-circle nav-link text-light' %></li>
         <% else %>
          <li><%= link_to ' ホーム',root_path,class: 'fas fa-home nav-link text-light' %></li>
-         <li><%= link_to ' ルール',home_about_path,class: 'fas fa-link nav-link text-light' %></li>
+         <li><%= link_to ' ルール',home_about_path,class: 'fas fa-exclamation-circle nav-link text-light' %></li>
          <li><%= link_to ' 新規登録', new_member_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
-         <li><%= link_to ' ログイン', new_member_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+         <li><%= link_to ' ログイン', new_member_session_path ,class: 'fas fa-door-open nav-link text-light'%></li>
         <% end %>
       </ul>
      </div>
