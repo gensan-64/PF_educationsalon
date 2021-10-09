@@ -14,11 +14,11 @@
   </tr>
   <tr>
    <th>フォロー数</th>
-   <th><%= link_to member.followings.count, member_followings_path(member) %></th>
+   <th><%= link_to member.followings.count, member_followings_path(member.id), method: :get  %></th>
   </tr>
   <tr>
     <th>フォロワー数</th>
-    <th><%= link_to member.followers.count, member_followers_path(member) %></th>
+    <th><%= link_to member.followers.count, member_followers_path(member.id), method: :get  %></th>
   </tr>
 </table>
 
@@ -31,5 +31,5 @@
   <% end %>
   <% else %>
   <%= link_to '',edit_member_path(member),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_member_#{member.id}" %>
- < % end %>
+ <% end %>
 </div>
