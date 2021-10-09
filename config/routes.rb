@@ -15,5 +15,6 @@ Rails.application.routes.draw do
    # delete 'relationships/:member_id' => 'relationships#destroy', as: 'relationships'
    get 'followings' => 'relationships#followings', as: 'followings'
    get 'followers' => 'relationships#followers', as: 'followers'
+   get '/search', to: 'searchs#search'
   end
 end

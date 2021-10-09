@@ -1,0 +1,7 @@
+<% if @model == 'member' %>
+  <h3>【Membersモデルの検索結果】検索ワード：<%= @content %></h3>
+  <%= render 'memberss/index', members: @records %>
+<% else @model == 'advices' %>
+  <h3>【Advicesモデルの検索結果】検索ワード：<%= @content %></h3>
+    <%= render 'advices/index', advices: @records %>
+<% end %>

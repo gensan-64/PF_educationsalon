@@ -11,6 +11,11 @@
 
   <body>
    <%= render 'layouts/header' %>
-    <%= yield %>
+    <main>
+     <% if member_signed_in? %>
+      <%= render 'layouts/search' %>
+     <% end %>
+     <%= yield %>
+    </main>
   </body>
 </html>
