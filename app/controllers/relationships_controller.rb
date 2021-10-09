@@ -2,6 +2,7 @@ class RelationshipsController < ApplicationController
 
 
  def create
+  # byebug
   current_member.follow(params[:member_id])
   redirect_to request.referer
  end
@@ -11,13 +12,17 @@ class RelationshipsController < ApplicationController
   redirect_to request.referer
  end
 
- def following
-  member = Member.find(params[:member_id])
-  @members = member.followings
+ def followings
+  followings = Relationship.where(followed_id: current_member.id).pluck(:follower_id)
+  @members = Member.where(id: followings)
+  # byebug
+  # member = Member.find(params[:member_id])
+  # @members = member.followings
+  # byebug
  end
 
  def followers
-  member = Member.find(params[:member_id])
-  @members = member.followers
+  followings = Relationship.where(follower_id: current_member.id).pluck(:followed_id)
+  @members = Member.where(id: followings)
  end
 end
