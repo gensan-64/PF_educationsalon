@@ -5,10 +5,7 @@ class AdviceCommentsController < ApplicationController
   @advice_comment = AdviceComment.new(advice_comment_params)
   @advice_comment.advice_id = @advice_id
   @advice_comment.member_id = current_member.id
-  if @advice_comment.save
-  else
-   render 'advices/show'
-  end
+  @advice_comment.save
  end
 
 

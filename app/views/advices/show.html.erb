@@ -17,12 +17,20 @@
         </td>
         <td><%= link_to @advice.title, advice_path(@advice) %></td>
         <td><%= @advice.body %></td>
+        <td class="comments-count">コメント数<%= @advice.advice_comments.count %></td>
         <td class="favorite-btn"><%=render "favorites/favorite-btn", advice: @advice %></td>
         <% if @advice.member == current_member %>
          <td><%= link_to '編集する',edit_advice_path(@advice), class: "btn btn-sm btn-success edit_advice_#{@advice.id}" %></td>
          <td><%= link_to '削除する', advice_path(@advice), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_advice_#{@advice.id}"%></td>
+        <% end %>
       </tr>
      </table>
+     <table class="advice_comments">
+      <%= render 'advice_comments/index', advice: @advice %>
+     </table>
+     <%= form_with model:[@advice,@advice_comment] do |f| %>
+      <%= f.text_area :comment, size:"90x5" %>
+      <%= f.submit '送信'%>
    </div>
   </div>
 </div>

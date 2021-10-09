@@ -1,4 +1,3 @@
-<table>
   <% @advice.advice_comments.each do |advice_comment| %>
     <% advice_comment_member = advice_comment.member %>
     <tr>
@@ -14,8 +13,3 @@
     	<% end %>
     </tr>
   <% end %>
-</table>
-<%= form_with model:[@advice,@advice_comment], local: true do |f| %>
-  <%= f.text_area :comment, size:"90x5" %><br>
-  <%= f.submit '送信'%>
-<% end %>
