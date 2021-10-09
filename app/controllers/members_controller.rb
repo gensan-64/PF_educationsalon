@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
 
+ before_action :ensure_correct_member, only: [:edit, :update]
 
  def show
   # （idに該当する会員を見つける）
@@ -22,6 +23,7 @@ class MembersController < ApplicationController
  end
 
  def edit
+  @member = Member.find(params[:id])
  end
 
  def update
@@ -36,9 +38,15 @@ class MembersController < ApplicationController
 
  private
 
- def user_params
+ def member_params
   params.require(:member).permit(:name, :introduction, :subject, :profile_image)
  end
 
+ def ensure_correct_user
+  @member = Member.find(params[:id])
+  unless @member == current_member
+   redirect_to member_path(current_member)
+  end
+ end
 
 end

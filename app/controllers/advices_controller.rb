@@ -1,5 +1,5 @@
 class AdvicesController < ApplicationController
-
+ before_action :ensure_correct_advice, only:[:edit]
  def index
   # (すべての投稿されたアドバイスを変数に渡す)
   @advices = Advice.all
@@ -54,4 +54,10 @@ class AdvicesController < ApplicationController
   params.require(:advice).permit(:title, :body)
  end
 
+ def ensure_correct_advice
+  @advice = Advice.find(params[:id])
+  unless @advice.member == current_member
+   redirect_to advices_path
+  end
+ end
 end
