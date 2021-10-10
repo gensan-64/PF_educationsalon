@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get 'home/about' => 'homes#about'
+  get '/search', to: 'searchs#search'
 
   resources :advices, only: [:index, :show, :edit, :create, :update, :destroy] do
    resource :favorites, only: [:create, :destroy]
@@ -15,6 +16,6 @@ Rails.application.routes.draw do
    # delete 'relationships/:member_id' => 'relationships#destroy', as: 'relationships'
    get 'followings' => 'relationships#followings', as: 'followings'
    get 'followers' => 'relationships#followers', as: 'followers'
-   get '/search', to: 'searchs#search'
+
   end
 end
