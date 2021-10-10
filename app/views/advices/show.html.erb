@@ -28,7 +28,7 @@
      <table class="advice_comments">
       <%= render 'advice_comments/index', advice: @advice %>
      </table>
-     <%= form_with model:@advice_comment do |f| %>
+     <%= form_with model: @advice_comment,url: advice_advice_comments_path(@advice.id), remote:true do |f| %>
       <%= f.text_area :comment, size:"90x5" %>
       <%= f.submit '送信'%>
      <% end %>

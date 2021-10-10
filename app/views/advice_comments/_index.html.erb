@@ -9,7 +9,7 @@
     	</td>
     	<td><%= advice_comment.comment %></td>
     	<% if current_member == advice_comment_member %>
-      	<td><%= link_to 'Destroy', advice_advice_comment_path(advice_comment.member_id, advice_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+      	<td><%= link_to 'Destroy', advice_advice_comment_path(advice_comment.advice_id, advice_comment.id), remote:true,class: 'btn-sm btn-danger', method: :delete %></td>
     	<% end %>
     </tr>
   <% end %>

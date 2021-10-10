@@ -30,6 +30,9 @@ class AdvicesController < ApplicationController
 
  def show
   @advice = Advice.find(params[:id])
+  @advice_comment = AdviceComment.new
+
+
  end
 
  def edit
