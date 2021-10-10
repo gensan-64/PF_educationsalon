@@ -11,13 +11,13 @@
      <table class='table'>
       <tr>
         <td><%= link_to member_path(@advice.member) do %>
-         <%= attachment_image_tag(@advice.member, :profile_image, :fill, 100, 100, fallback: "no-image.jpg") %><br>
+         <%= attachment_image_tag(@advice.member, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %><br>
          <%= @advice.member.name %>
          <% end %>
         </td>
         <td><%= link_to @advice.title, advice_path(@advice) %></td>
         <td><%= @advice.body %></td>
-        <td class="comments-count">コメント数<%= @advice.advice_comments.count %></td>
+        <td class="comments-count">コメント数: <%= @advice.advice_comments.count %></td>
         <td class="favorite-btn"><%=render "favorites/favorite-btn", advice: @advice %></td>
         <% if @advice.member == current_member %>
          <td><%= link_to '編集する',edit_advice_path(@advice), class: "btn btn-sm btn-success edit_advice_#{@advice.id}" %></td>
@@ -28,9 +28,10 @@
      <table class="advice_comments">
       <%= render 'advice_comments/index', advice: @advice %>
      </table>
-     <%= form_with model:[@advice,@advice_comment] do |f| %>
+     <%= form_with model:@advice_comment do |f| %>
       <%= f.text_area :comment, size:"90x5" %>
       <%= f.submit '送信'%>
+     <% end %>
    </div>
   </div>
 </div>

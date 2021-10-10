@@ -42,7 +42,7 @@ class MembersController < ApplicationController
   params.require(:member).permit(:name, :introduction, :subject, :profile_image)
  end
 
- def ensure_correct_user
+ def ensure_correct_member
   @member = Member.find(params[:id])
   unless @member == current_member
    redirect_to member_path(current_member)

@@ -6,6 +6,7 @@ class AdviceCommentsController < ApplicationController
   @advice_comment.advice_id = @advice_id
   @advice_comment.member_id = current_member.id
   @advice_comment.save
+  @advice = Advice.find(params[:advice_id])
  end
 
 
