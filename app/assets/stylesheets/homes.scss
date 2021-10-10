@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#box{
+  height: 500px;
+}
+.image1 {
+  background-image: image-url(school.jpg);
+}
+.image2 {
+  background-image: image-url(textbook.jpg);
+}
+.image3 {
+  background-image: image-url(choke.jpg);
+}
+.image4 {
+  background-image: image-url(blackboard.jpg);
+}
+
