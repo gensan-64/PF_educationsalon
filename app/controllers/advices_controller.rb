@@ -2,10 +2,11 @@ class AdvicesController < ApplicationController
   before_action :ensure_correct_advice, only: [:edit]
   def index
     # (すべての投稿されたアドバイスを変数に渡す)
-    @advices = Advice.all
+    # @advices = Advice.all
 
     # (空のインスタンスに新規投稿されたアドバイスを渡す)
     @advice = Advice.new
+    @advices = Advice.find(Favorite.group(:advice_id).order('count(advice_id) desc').limit(4).pluck(:advice_id))
   end
 
   def create
@@ -13,7 +14,7 @@ class AdvicesController < ApplicationController
     @advice = Advice.new(advice_params)
 
     # (投稿した会員は現在ログインしている会員)
-    @advice.member_id = current_member.id
+    @advice.member_id = current_member.id s
 
     if @advice.save
       # (投稿出来たら詳細に行く)
