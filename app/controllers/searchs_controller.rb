@@ -13,6 +13,7 @@ class SearchsController < ApplicationController
   end
 
   private
+
   def search_for(model, content, method)
     # 選択したモデルがmemberだったら
     if model == 'member'
@@ -21,14 +22,14 @@ class SearchsController < ApplicationController
         Member.where(name: content)
       # 選択した検索方法がが部分一致だったら
       else
-        Member.where('name LIKE ?', '%'+content+'%')
+        Member.where('name LIKE ?', '%' + content + '%')
       end
     # 選択したモデルがadviceだったら
     elsif model == 'advice'
       if method == 'perfect'
         Advice.where(title: content)
       else
-        Advice.where('title LIKE ?', '%'+content+'%')
+        Advice.where('title LIKE ?', '%' + content + '%')
       end
     end
   end

@@ -1,6 +1,6 @@
 class AdviceComment < ApplicationRecord
- belongs_to :member
- belongs_to :advice
+  belongs_to :member
+  belongs_to :advice
 
- validates :comment, presence: true
+  validates :comment, presence: true
 end

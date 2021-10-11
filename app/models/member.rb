@@ -5,7 +5,7 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :advices
-  attachment :profile_image, destroy:false
+  attachment :profile_image, destroy: false
   has_many :favorites, dependent: :destroy
   has_many :advice_comments, dependent: :destroy
 
@@ -33,5 +33,4 @@ class Member < ApplicationRecord
   def followings?(member)
     followings.include?(member)
   end
-
 end

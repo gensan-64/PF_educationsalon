@@ -6,16 +6,15 @@ Rails.application.routes.draw do
   get '/search', to: 'searchs#search'
 
   resources :advices, only: [:index, :show, :edit, :create, :update, :destroy] do
-   resource :favorites, only: [:create, :destroy]
-   resources :advice_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+    resources :advice_comments, only: [:create, :destroy]
   end
 
   resources :members, only: [:index, :show, :edit, :update] do
-   resource :relationships, only: [:create, :destroy]
-   # post 'relationships/:member_id' => 'relationships#create', as: 'relationships'
-   # delete 'relationships/:member_id' => 'relationships#destroy', as: 'relationships'
-   get 'followings' => 'relationships#followings', as: 'followings'
-   get 'followers' => 'relationships#followers', as: 'followers'
-
+    resource :relationships, only: [:create, :destroy]
+    # post 'relationships/:member_id' => 'relationships#create', as: 'relationships'
+    # delete 'relationships/:member_id' => 'relationships#destroy', as: 'relationships'
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
 end
