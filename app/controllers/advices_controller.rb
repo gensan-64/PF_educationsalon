@@ -6,6 +6,7 @@ class AdvicesController < ApplicationController
 
     # (空のインスタンスに新規投稿されたアドバイスを渡す)
     @advice = Advice.new
+    # いいねされた上位4つを表示
     @advices = Advice.find(Favorite.group(:advice_id).order('count(advice_id) desc').limit(4).pluck(:advice_id))
   end
 

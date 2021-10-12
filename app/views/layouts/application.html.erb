@@ -12,9 +12,6 @@
   <body>
    <%= render 'layouts/header' %>
     <main>
-     <% if member_signed_in? %>
-      <%= render 'searchs/form' %>
-     <% end %>
      <%= yield %>
     </main>
   </body>
