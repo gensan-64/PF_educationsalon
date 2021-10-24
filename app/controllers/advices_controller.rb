@@ -15,7 +15,7 @@ class AdvicesController < ApplicationController
     @advice = Advice.new(advice_params)
 
     # (投稿した会員は現在ログインしている会員)
-    @advice.member_id = current_member.id s
+    @advice.member_id = current_member.id 
 
     if @advice.save
       # (投稿出来たら詳細に行く)
