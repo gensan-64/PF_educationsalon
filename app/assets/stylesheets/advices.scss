@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .advice-edit-stage{
-  background-image: url("mistake.jpg");
+  background-image: image-url("mistake.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 }
 
 .advice-list{
-  background-image: url("company.jpg");
+  background-image: image-url("company.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 }
 
 .advice-theme{
-  background-image: url("library.jpg");
+  background-image: image-url("library.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;

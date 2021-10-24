@@ -6,20 +6,20 @@
   height: 500px;
 }
 .image1 {
-  background-image: url("school.jpg");
+  background-image: image-url("school.jpg");
 }
 .image2 {
-  background-image: url("textbook.jpg");
+  background-image: image-url("textbook.jpg");
 }
 .image3 {
-  background-image: url("choke.jpg");
+  background-image: image-url("choke.jpg");
 }
 .image4 {
-  background-image: url("blackboard.jpg");
+  background-image: image-url("blackboard.jpg");
 }
 
 .rule{
-  background-image: url("whiteboard.jpg");
+  background-image: image-url("whiteboard.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;

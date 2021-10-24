@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .my-edit{
-  background-image: url("laptop.jpg");
+  background-image: image-url("laptop.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
 }
 
 .my-list{
-  background-image: url("classroom.jpg");
+  background-image: image-url("classroom.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@
 }
 
 .my-advices{
-  background-image: url("library.jpg");
+  background-image: image-url("library.jpg");
   background-color: rgba(30,30,30,0.1);
   background-position: center center;
   background-repeat: no-repeat;
